@@ -1,0 +1,20 @@
+.Navbar ul{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 76px;
+    list-style-type: none;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+}
+
+.Navbar li{
+    font-size: 20px;
+    margin-right: 46px;
+    font-weight: bold;
+    font-family: 'Dosis', sans-serif;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}

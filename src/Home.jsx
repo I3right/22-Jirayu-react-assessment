@@ -1,3 +1,9 @@
+import React,{useState} from "react"
+import Layout from "./Layout"
+import RenderUser from "./RenderUser";
+import RenderAdmin from "./RenderAdmin";
+import './Home.css'
+
 const mockEmployees = [
   {
     id: 0,
@@ -21,13 +27,33 @@ const mockEmployees = [
 
 const Home = () => {
 
-  return (
-    <div>
+  const [employee,setemployee] = useState(mockEmployees)
+  
+  const addNewItem = (newEmployee) => {
+    setemployee((oldemployee) => {
+      return [...oldemployee,newEmployee]// {waiting value from RenderAdmin component}
+    })
+  }
 
-    </div>
+  const[sector,setSector] = useState('');
+  {if(sector==='other'){<h1>Generation Thailand<br/>Home - Assessment</h1>}}
+  return (
+    <Layout>
+      <div className="container">
+        {sector==='' &&  <h1>Generation Thailand<br/>Home - Assessment</h1>}
+        {sector==='user'  &&  <h1>Generation Thailand<br/>Home - User Sector</h1>}
+        {sector==='admin' &&  <h1>Generation Thailand<br/>Home - Admin Sector</h1>}
+
+        <div className="btn-selector">
+          <button onClick={()=>{setSector('user')}}>User Home Sector</button>
+          <button onClick={()=>{setSector('admin')}}>Admin Home Sector</button>
+        </div>
+
+        {sector==='user' &&  <RenderUser employee={employee}/>}
+        {sector==='admin' &&  <RenderAdmin addItem={addNewItem} setemployee={setemployee}  employee={employee}/>}
+      </div>
+    </Layout>
   )
 }
-
-
 
 export default Home
