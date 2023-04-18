@@ -1,0 +1,27 @@
+.owner {
+  width: 500px;
+  margin: 20px auto;
+  font-family: "Dosis", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+img {
+  width: 100%;
+}
+
+.owner figure {
+  margin: 20px auto;
+  width: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 1px 1px 10px black;
+}
+
+.owner p{
+  margin: 10px 0;
+  line-height: 1.3rem;
+}

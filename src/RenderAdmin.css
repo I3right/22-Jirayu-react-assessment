@@ -28,6 +28,10 @@
     color: white;
 }
 
+.showResult form button:active {
+    background-color: #3f3dac;
+}
+
 .delete-button{
     text-align: center;
     padding: 0;
@@ -36,6 +40,10 @@
 .delete-button button{
     color: red;
     font-weight: bold;
+}
+
+.delete-button button:active{
+background-color:#cccccc;
 }
 
 .admin-table td{

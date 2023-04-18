@@ -27,11 +27,11 @@ const mockEmployees = [
 
 const Home = () => {
 
-  const [employee,setemployee] = useState(mockEmployees)
+  const [employee,setEmployee] = useState(mockEmployees)
   
   const addNewItem = (newEmployee) => {
-    setemployee((oldemployee) => {
-      return [...oldemployee,newEmployee]// {waiting value from RenderAdmin component}
+    setEmployee((oldEmployee) => {
+      return [...oldEmployee,newEmployee]// {waiting value from RenderAdmin component}
     })
   }
 
@@ -50,7 +50,7 @@ const Home = () => {
         </div>
 
         {sector==='user' &&  <RenderUser employee={employee}/>}
-        {sector==='admin' &&  <RenderAdmin addItem={addNewItem} setemployee={setemployee}  employee={employee}/>}
+        {sector==='admin' &&  <RenderAdmin addItem={addNewItem} setEmployee={setEmployee}  employee={employee}/>}
       </div>
     </Layout>
   )
