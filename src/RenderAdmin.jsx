@@ -27,7 +27,7 @@ function RenderAdmin(prop) {
     e.preventDefault()
 
     const newEmployee = {
-      id:(employee[employee.length-1].id)+1,
+      id:(employee.length===0)?0:(employee[employee.length-1].id)+1,
       name: name,
       lastname: lastName,
       position: position
@@ -35,17 +35,17 @@ function RenderAdmin(prop) {
     // sent attribute to function addNewItem in Home.jsx
     addItem(newEmployee)
     // console.log(employee,newEmployee);
-
+    
     // clear state will work if add value = {...} in <input>
     setName('')
     setLastName('')
     setPosition('')
   }
+  console.log(employee)
 
   // Effect for unlock button if all of 3 input.length > 0
   useEffect (()=>{
     // declare new variable as boolean if 3 conditions is true this variable will be true
-    console.log(typeof name)
     const checkInput = name.length>0 && lastName.length>0 && position.length>0;
     setLockButton(checkInput)
   },[name,lastName,position])
